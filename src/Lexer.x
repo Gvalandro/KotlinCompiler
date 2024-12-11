@@ -99,7 +99,6 @@ data Token = ID String         -- e.g. xy123
            | INTEGER Int       -- integer literals
 	   | BOOL	       -- Boolean Type
 	   | BOOLEAN_LIT Bool  -- true / false
-	   | RETURN 	       -- return
            deriving (Eq, Show)
 
 -- Função auxiliar para distinguir palavras reservadas de identificadores
@@ -117,6 +116,5 @@ lexerText "print"  = PRINT
 lexerText "readln" = READLINE
 lexerText "true"   = BOOLEAN_LIT True
 lexerText "false"  = BOOLEAN_LIT False
-lexerText "return" = RETURN
 lexerText xs       = ID xs
 }

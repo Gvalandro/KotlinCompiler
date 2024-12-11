@@ -17,5 +17,4 @@ data Instr = MOVE Temp Temp                -- t1 := t2
   | MAINFUN Int                   -- define label
   | JUMP Label                    -- unconditional jump
   | COND Temp ReOp Temp Label Label  -- conditional jump
-  | RETURN
   deriving (Show)

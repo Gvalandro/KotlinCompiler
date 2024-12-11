@@ -82,7 +82,6 @@ transArgs (exp:exps) tabl
 
 transStm :: Stmt -> Table -> State Supply [Instr]
 transStm (Assign var expr) tabl = transExpr expr tabl (findTemp var tabl)
-transStm (Return) table = return [RETURN]
 transStm (StmtLi stmts) tabl = transStmList stmts tabl
 transStm (Print expr) tabl = do
   dest <- newTemp

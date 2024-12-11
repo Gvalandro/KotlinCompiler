@@ -35,7 +35,6 @@ checkBlocks env [] = True
 checkBlocks env (x:xs) = (checkStm env x) && (checkBlocks env xs)
 
 checkStm :: [Env] -> Stmt -> Bool
-checkStm env (Return) = True
 checkStm env (If cond stm1) 
   | (checkExp env cond) == TpBool && (checkStm env stm1) == True = True
   | otherwise = error ("type error in if")

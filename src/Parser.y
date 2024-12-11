@@ -47,7 +47,6 @@ num             { INTEGER $$ }
 'if'            { IF }
 'else'          { ELSE }
 'while'         { WHILE }
-'return' 	{ RETURN }
 
 -- Types
 'Int'           { INT }
@@ -84,7 +83,6 @@ Stmt            : 'if' '(' Exp ')' Stmt 'else' Stmt 			    { IfElse $3 $5 $7 }
                 | id '++'                                                   { PostAdd $1}
                 | id '--'                                                   { PostMinus $1}
                 | Exp                                                       { ExpStmt $1 }
-		| 'return' 						    { Return }
 	       
 Declares        : Declare Declares                                          { $1 : $2 }
                 | {- empty -}                                               { [] }

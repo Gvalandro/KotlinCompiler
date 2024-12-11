@@ -18,7 +18,6 @@ data Stmt
     | PostAdd String
     | PostMinus String
     | ExpStmt Exp              -- Standalone expression as a statement, e.g., `x + 1`
-    | Return 
     deriving (Eq, Show)
 
 data Tp 

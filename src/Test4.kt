@@ -1,15 +1,11 @@
 fun main() {
-    val a: Int 
-    val b: Int
+    
+    val b: Boolean
+    val a: Boolean
     val c: Boolean
+    a = false
+    b = true
+    c = 4
+	print(c)
 
-    a = 15
-    b = 10
-    c = ((a > b) && (a != b)) || !(a < b)
-
-    if (c) {
-        print(c)
-    } else {
-        print(0)
-    }
 }

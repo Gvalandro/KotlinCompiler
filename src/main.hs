@@ -22,9 +22,6 @@ runCodeGen gen = State.evalState gen initialSupply
 printIR :: [Instr] -> IO ()
 printIR = mapM_ print
 
--- Função auxiliar para exibir uma lista de instruções MIPS
-printMIPS :: [String] -> IO ()
-printMIPS = mapM_ putStrLn
 
 main :: IO ()
 main = do
@@ -57,11 +54,3 @@ main = do
   putStrLn "\nCódigo gerado em MIPS:"
   let mipsCode = translateProgram ir
   mapM_ putStrLn mipsCode  
-
--- Gera o código intermediário executando o estado inicial
-  --putStrLn "Gerando código intermediário..."
-  --let intermediateCode = evalState (transProgram parseResult) initialSupply
-  
-  -- Mostra o código intermediário
-  --putStrLn "\nCódigo intermediário:"
-  --mapM_ print intermediateCode
